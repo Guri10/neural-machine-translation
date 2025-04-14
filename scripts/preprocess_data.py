@@ -1,8 +1,12 @@
 # scripts/preprocess_data.py
+import os
+import sys
+# Add root directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import os
+
 
 INPUT_FILE = "data/raw/Sentence pairs in English-French - 2025-04-14.tsv"
 OUTPUT_DIR = "data/processed"
