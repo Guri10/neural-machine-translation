@@ -6,8 +6,8 @@ from torch.utils.data import DataLoader
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from nltk.tokenize import word_tokenize
 import nltk
-# nltk.download("punkt")
-# nltk.download('punkt_tab')
+nltk.download("punkt")
+nltk.download('punkt_tab')
 from datetime import datetime
 # Add root directory to sys.path
 import sys
