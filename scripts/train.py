@@ -16,21 +16,21 @@ from datetime import datetime
 
 # Config
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-# BATCH_SIZE = 32
-# EMB_DIM = 256
-# HIDDEN_DIM = 512
-# NUM_LAYERS = 1
-# DROPOUT = 0.5
-# EPOCHS = 5
-# CLIP = 1
+BATCH_SIZE = 32
+EMB_DIM = 256
+HIDDEN_DIM = 512
+NUM_LAYERS = 1
+DROPOUT = 0.5
+EPOCHS = 5
+CLIP = 1
 
-BATCH_SIZE = 16         # smaller batch = faster on small data
-EMB_DIM = 128           # lower embedding size = faster lookup + smaller model
-HIDDEN_DIM = 256        # lower hidden size = smaller LSTM + faster forward/backward pass
-NUM_LAYERS = 1          # keep it at 1 for now
-EPOCHS = 1              # just 1 epoch to test if it's all working
-DROPOUT = 0.2           # lower dropout = faster training
-CLIP = 1               # gradient clipping
+# BATCH_SIZE = 16         # smaller batch = faster on small data
+# EMB_DIM = 128           # lower embedding size = faster lookup + smaller model
+# HIDDEN_DIM = 256        # lower hidden size = smaller LSTM + faster forward/backward pass
+# NUM_LAYERS = 1          # keep it at 1 for now
+# EPOCHS = 1              # just 1 epoch to test if it's all working
+# DROPOUT = 0.2           # lower dropout = faster training
+# CLIP = 1               # gradient clipping
 
 
 # Load dataset and build vocab
