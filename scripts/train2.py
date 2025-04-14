@@ -6,8 +6,8 @@ from torch.utils.data import DataLoader
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from nltk.tokenize import word_tokenize
 import nltk
-nltk.download("punkt")
-
+# nltk.download("punkt")
+# nltk.download('punkt_tab')
 from datetime import datetime
 # Add root directory to sys.path
 import sys
@@ -78,19 +78,25 @@ for epoch in range(EPOCHS):
     epoch_loss = 0
     start = time.time()
 
-    for src, trg in train_loader:
-        src, trg = src.to(DEVICE), trg.to(DEVICE)
-        optimizer.zero_grad()
-        output = model(src, trg)
+for batch_idx, (src, trg) in enumerate(train_loader):
+    src, trg = src.to(DEVICE), trg.to(DEVICE)
+    optimizer.zero_grad()
+    output = model(src, trg)
 
-        output = output[:, 1:].reshape(-1, len(train_data.fr_vocab))
-        trg = trg[:, 1:].reshape(-1)
+    output = output[:, 1:].reshape(-1, len(train_data.fr_vocab))
+    trg = trg[:, 1:].reshape(-1)
 
-        loss = criterion(output, trg)
-        loss.backward()
-        torch.nn.utils.clip_grad_norm_(model.parameters(), CLIP)
-        optimizer.step()
-        epoch_loss += loss.item()
+    loss = criterion(output, trg)
+    loss.backward()
+    torch.nn.utils.clip_grad_norm_(model.parameters(), CLIP)
+    optimizer.step()
+
+    epoch_loss += loss.item()
+
+    # ✅ Log every N batches
+    if (batch_idx + 1) % 50 == 0 or (batch_idx == 0):
+        print(f"✅ Epoch {epoch+1} | Batch {batch_idx+1}/{len(train_loader)} | Loss: {loss.item():.4f}")
+
 
     avg_train_loss = epoch_loss / len(train_loader)
 
