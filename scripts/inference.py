@@ -12,8 +12,8 @@ from scripts.dataset import TranslationDataset
 import argparse
 import nltk
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
-nltk.download('punkt')
-nltk.download('punkt_tab')
+# nltk.download('punkt')
+# nltk.download('punkt_tab')
 from nltk.tokenize import word_tokenize
 
 
@@ -111,7 +111,7 @@ if __name__ == "__main__":
 
     bleu_scores = []
 
-    for i in range(50):  # Evaluate on first 50 samples
+    for i in range(1000):  # Evaluate on first 50 samples
         src = test_df.iloc[i]["en"]
         ref = test_df.iloc[i]["fr"]
 
