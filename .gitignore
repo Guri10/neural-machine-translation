@@ -7,3 +7,5 @@ __pycache__/
 *.h5
 *.ckpt
 nmt-env/
+checkpoints/
+*.pt
