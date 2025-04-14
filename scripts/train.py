@@ -11,6 +11,7 @@ from models.encoder import Encoder
 from models.attention import Attention
 from models.decoder import Decoder
 from models.seq2seq import Seq2Seq
+import time
 
 # Config
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -43,15 +44,17 @@ criterion = nn.CrossEntropyLoss(ignore_index=train_data.fr_vocab.stoi["<pad>"])
 for epoch in range(EPOCHS):
     model.train()
     epoch_loss = 0
+    start_time = time.time()
+
+    print(f"\n🔁 Starting epoch {epoch+1}/{EPOCHS}...")
 
     for batch_idx, (src, trg) in enumerate(train_loader):
         src, trg = src.to(DEVICE), trg.to(DEVICE)
 
         optimizer.zero_grad()
-        output = model(src, trg)
+        output = model(src, trg)  # output: [batch_size, trg_len, vocab_size]
 
-        # output: [batch_size, trg_len, vocab_size]
-        # target: [batch_size, trg_len]
+        # Remove <sos> token for loss computation
         output = output[:, 1:].reshape(-1, fr_vocab_size)
         trg = trg[:, 1:].reshape(-1)
 
@@ -63,4 +66,12 @@ for epoch in range(EPOCHS):
 
         epoch_loss += loss.item()
 
-    print(f"Epoch {epoch+1}/{EPOCHS} | Loss: {epoch_loss / len(train_loader):.4f}")
+        # Log every N batches
+        if (batch_idx + 1) % 100 == 0 or batch_idx == 0:
+            print(f"  ✅ Batch {batch_idx+1}/{len(train_loader)} - Loss: {loss.item():.4f}")
+
+    avg_loss = epoch_loss / len(train_loader)
+    epoch_time = time.time() - start_time
+
+    print(f"\n📊 Epoch {epoch+1} completed in {epoch_time:.2f}s | Average Loss: {avg_loss:.4f}")
+    print("-" * 60)
