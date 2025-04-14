@@ -30,6 +30,7 @@ HIDDEN_DIM = 256        # lower hidden size = smaller LSTM + faster forward/back
 NUM_LAYERS = 1          # keep it at 1 for now
 EPOCHS = 1              # just 1 epoch to test if it's all working
 DROPOUT = 0.2           # lower dropout = faster training
+CLIP = 1               # gradient clipping
 
 
 # Load dataset and build vocab
