@@ -21,6 +21,8 @@ This file logs model performance metrics during training and inference.
 
 ## 📈 BLEU Score Summary
 
+### Following is models are trained on ~ 24% of the data (100K samples)
+
 | Checkpoint                        | Epoch | Beam Width | Samples | BLEU Score |
 | --------------------------------- | ----- | ---------- | ------- | ---------- |
 | seq2seq_model_20250414-213821.pt  | 05    | 1          | 500     | 0.1880     |
@@ -49,14 +51,34 @@ This file logs model performance metrics during training and inference.
 
 ## 🧠 Observations
 
-- Beam search gives slightly higher BLEU (~0.01 gain).
-- BLEU plateaus around 0.19–0.20 with current training setup.
-- Need longer training or subword tokenization for significant gains.
+- ✅ Training for 15 epochs significantly improved BLEU, especially with beam search.
+
+- 🚀 Beam search (width = 5) consistently outperforms greedy decoding by ~0.01–0.02 BLEU across all sample sizes.
+
+- 📈 BLEU continues to climb with more evaluation samples:
+
+- - From 0.1985 (500) → 0.2111 (2000) → 0.2123 (3000)
+
+- 🔁 The model generalizes well across longer test sets — BLEU doesn’t collapse as sample size increases.
+
+- 📉 BLEU on greedy decoding plateaus around 0.188–0.209, while beam width 5 pushes it past 0.21
+
+- 🔎 Training was done on only ~24% of the dataset (~100k samples) — so there’s headroom for improvement with more data.
 
 ---
 
 ## 🔜 Next Steps
 
-- Try 20+ epochs
-- Experiment with BPE tokenization
-- Visualize attention weights
+- 📈 Train on more data — Try increasing MAX_SAMPLES to 200k–300k or the full 417k for even better performance.
+
+- ⏳ Train longer — Go beyond 15 epochs with early stopping based on validation BLEU.
+
+- ✂️ Switch to subword tokenization (BPE) — Helps with OOV words and morphology, expected BLEU gain: +0.03 to +0.07
+
+- 🧪 Tune decoding parameters — Experiment with beam width 6–10, or apply length normalization during beam search.
+
+- 📊 Track per-epoch BLEU in a CSV — For plotting learning curves and analyzing training dynamics.
+
+- 🧠 Add attention visualization — Helps interpret and debug alignment between source and target.
+
+- 📦 Create a leaderboard-style summary — Show checkpoint, training config, and BLEU in one place (great for reports/presentations).
