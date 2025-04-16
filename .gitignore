@@ -9,3 +9,4 @@ __pycache__/
 nmt-env/
 checkpoints/
 *.pt
+ignore/
