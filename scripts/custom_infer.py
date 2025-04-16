@@ -9,7 +9,7 @@ from models.attention import Attention
 from models.decoder import Decoder
 from models.seq2seq import Seq2Seq
 from scripts.dataset import TranslationDataset
-from scripts.inference3 import translate_sentence_beam
+from scripts.inference_beam_eval import translate_sentence_beam
 
 # Setup
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
