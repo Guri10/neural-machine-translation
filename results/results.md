@@ -44,6 +44,8 @@ This file logs model performance metrics during training and inference.
 | seq2seq_best_bleu_20250414-230424 | 15    | 5          | 1000    | 0.2078     |
 | seq2seq_best_bleu_20250414-230424 | 15    | 5          | 2000    | 0.2111     |
 | seq2seq_best_bleu_20250414-230424 | 15    | 5          | 3000    | 0.2123     |
+| seq2seq_best_bleu_20250416-214530 | 15    | 5          | 1000    | 0.2165     |
+| seq2seq_best_bleu_20250416-214530 | 15    | 5          | 2000    | 0.2271     |
 
 📝 Add more rows as new models are evaluated.
 

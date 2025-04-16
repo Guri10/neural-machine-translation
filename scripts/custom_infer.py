@@ -26,7 +26,7 @@ decoder = Decoder(len(fr_vocab), 256, 512, 1, 0.5, attn)
 model = Seq2Seq(encoder, decoder, DEVICE).to(DEVICE)
 
 # Load checkpoint
-model_path = "checkpoints/seq2seq_best_bleu_20250414-230424.pt"  # Update with your best checkpoint
+model_path = "checkpoints/seq2seq_best_bleu_20250416-214530.pt"  # Update with your best checkpoint
 model.load_state_dict(torch.load(model_path, map_location=DEVICE))
 model.eval()
 
