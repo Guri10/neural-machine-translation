@@ -48,7 +48,7 @@ def translate_sentence(model, sentence, en_vocab, fr_vocab, device, max_len=50):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_path', type=str, default="checkpoints/seq2seq_model_20250414-213821.pt")
+    parser.add_argument('--model_path', type=str, default="checkpoints/seq2seq_best_bleu_20250414-230424.pt")
     parser.add_argument('--num_samples', type=int, default=500)
     args = parser.parse_args()
 
