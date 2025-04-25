@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 
 INPUT_FILE = "data/raw/Sentence pairs in English-French - 2025-04-14.tsv"
 OUTPUT_DIR = "data/processed"
-MAX_SAMPLES = 200000
+MAX_SAMPLES = None
 
 def load_and_clean(path, max_samples=None):
     df = pd.read_csv(path, sep='\t', header=None, names=['en_id', 'en', 'fr_id', 'fr'])
