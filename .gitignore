@@ -3,6 +3,7 @@ __pycache__/
 *.pkl
 .ipynb_checkpoints/
 .env
+<<<<<<< HEAD
 
 # models/
 *.h5
@@ -11,6 +12,12 @@ nmt-env/
 checkpoints/
 *.pt
 ignore/
+=======
+models/
+*.h5
+*.ckpt
+nmt-env/
+>>>>>>> origin/main
 =======
 models/
 *.h5
