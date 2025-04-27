@@ -3,7 +3,10 @@ __pycache__/
 *.pkl
 .ipynb_checkpoints/
 .env
-models/
+
 *.h5
 *.ckpt
 nmt-env/
+checkpoints/
+*.pt
+ignore/
