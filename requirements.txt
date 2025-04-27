@@ -29,7 +29,6 @@ requests==2.32.3
 safetensors==0.5.3
 scikit-learn==1.6.1
 scipy==1.15.2
-# >>>>>>> origin/main
 sentencepiece==0.2.0
 six==1.17.0
 sympy==1.13.1
@@ -42,7 +41,6 @@ transformers==4.51.3
 typing_extensions==4.13.2
 tzdata==2025.2
 urllib3==2.4.0
-# <<<<<<< HEAD
 evaluate
 sacrebleu
 seaborn
