@@ -1,3 +1,6 @@
+<<<<<<< HEAD
 
 checkpoints/*.pt filter=lfs diff=lfs merge=lfs -text
+=======
+>>>>>>> 9b982ef1bed5ce979edbc2d2a46996118051ce09
 *.safetensors filter=lfs diff=lfs merge=lfs -text
