@@ -10,6 +10,3 @@ nmt-env/
 checkpoints/
 *.pt
 ignore/
-*.h5
-*.ckpt
-nmt-env/
