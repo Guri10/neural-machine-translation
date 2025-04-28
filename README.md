@@ -17,7 +17,7 @@ This project implements a custom neural machine translation (NMT) system using a
 ## 🧠 Model Architecture
 
 - **Encoder**: LSTM with embeddings
-- **Attention**: Luong attention (dot-style)
+- **Attention**: Bahdanau’s additive attention
 - **Decoder**: LSTM with context vector + output projection
 - **Training**: Teacher forcing + CrossEntropyLoss
 
