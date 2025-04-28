@@ -21,36 +21,35 @@ This file logs model performance metrics during training and inference.
 
 ## 📈 BLEU Score Summary
 
-### Following is models are trained on ~ 24% of the data (100K samples)
-
-| Checkpoint                                 | Epoch | Beam Width | Samples | BLEU Score | Dataset size |
-| ------------------------------------------ | ----- | ---------- | ------- | ---------- | ------------ |
-| seq2seq_model_20250414-213821.pt           | 05    | 1          | 500     | 0.1880     | 25%          |
-| seq2seq_model_20250414-213821.pt           | 05    | 1          | 1000    | 0.1880     | 25%          |
-| seq2seq_model_20250414-213821.pt           | 05    | 3          | 100     | 0.1922     | 25%          |
-| seq2seq_model_20250414-213821.pt           | 05    | 5          | 100     | 0.1934     | 25%          |
-| seq2seq_model_20250414-213821.pt           | 05    | 5          | 500     | 0.1985     | 25%          |
-| seq2seq_best_bleu_20250414-230424          | 15    | 1          | 10      | 0.2274     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 3          | 10      | 0.2254     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 10      | 0.2267     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 1          | 100     | 0.2022     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 3          | 100     | 0.2056     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 100     | 0.2095     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 1          | 500     | 0.2093     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 3          | 500     | 0.2160     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 500     | 0.2167     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 1          | 1000    | 0.1979     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 3          | 1000    | 0.2066     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 1000    | 0.2078     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 2000    | 0.2111     |              |
-| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 3000    | 0.2123     |              |
-| seq2seq_best_bleu_20250416-214530          | 15    | 5          | 1000    | 0.2165     |              |
-| seq2seq_best_bleu_20250416-214530          | 15    | 5          | 2000    | 0.2271     |              |
-| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 10      | 0.2544     | 100%         |
-| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 100     | 0.2712     | 100%         |
-| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 1000    | 0.2638     | 100%         |
-| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 2000    | 0.2667     | 100%         |
-| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 3000    | 0.2677     | 100%         |
+| Checkpoint                                 | Epoch | Beam Width | Samples | BLEU Score | Train Dataset size |
+| ------------------------------------------ | ----- | ---------- | ------- | ---------- | ------------------ |
+| seq2seq_model_20250414-213821.pt           | 05    | 1          | 500     | 0.1880     | 25%                |
+| seq2seq_model_20250414-213821.pt           | 05    | 1          | 1000    | 0.1880     | 25%                |
+| seq2seq_model_20250414-213821.pt           | 05    | 3          | 100     | 0.1922     | 25%                |
+| seq2seq_model_20250414-213821.pt           | 05    | 5          | 100     | 0.1934     | 25%                |
+| seq2seq_model_20250414-213821.pt           | 05    | 5          | 500     | 0.1985     | 25%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 1          | 10      | 0.2274     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 3          | 10      | 0.2254     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 10      | 0.2267     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 1          | 100     | 0.2022     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 3          | 100     | 0.2056     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 100     | 0.2095     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 1          | 500     | 0.2093     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 3          | 500     | 0.2160     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 500     | 0.2167     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 1          | 1000    | 0.1979     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 3          | 1000    | 0.2066     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 1000    | 0.2078     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 2000    | 0.2111     | 50%                |
+| seq2seq_best_bleu_20250414-230424          | 15    | 5          | 3000    | 0.2123     | 50%                |
+| seq2seq_best_bleu_20250416-214530          | 15    | 5          | 1000    | 0.2165     | 50%                |
+| seq2seq_best_bleu_20250416-214530          | 15    | 5          | 2000    | 0.2271     | 50%                |
+| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 10      | 0.2544     | 100%               |
+| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 100     | 0.2712     | 100%               |
+| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 1000    | 0.2638     | 100%               |
+| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 2000    | 0.2667     | 100%               |
+| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 3000    | 0.2677     | 100%               |
+| seq2seq_fulldata_best_bleu_20250427-000059 | 10    | 5          | 41000   | 0.2684     | 100%               |
 
 📝 Add more rows as new models are evaluated.
 
