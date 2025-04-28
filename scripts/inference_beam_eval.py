@@ -16,8 +16,8 @@ from models.decoder import Decoder
 from models.seq2seq import Seq2Seq
 from scripts.dataset import TranslationDataset
 
-# nltk.download("punkt")
-# nltk.download('punkt_tab')
+nltk.download("punkt")
+nltk.download('punkt_tab')
 smoothie = SmoothingFunction().method4
 
 def translate_sentence_beam(model, sentence, en_vocab, fr_vocab, device, max_len=50, beam_width=3):
