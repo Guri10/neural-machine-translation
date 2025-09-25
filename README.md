@@ -6,7 +6,7 @@ This project implements a custom neural machine translation (NMT) system using a
 
 ## 🚀 Features
 
-- Encoder-Decoder model with Luong-style attention
+- Encoder-Decoder model with Bahdanau attention
 - Beam search decoding
 - BLEU score evaluation on validation/test sets
 - Clean modular PyTorch code
